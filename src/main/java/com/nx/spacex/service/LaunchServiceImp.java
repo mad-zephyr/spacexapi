@@ -1,7 +1,7 @@
 package com.nx.spacex.service;
 
 import com.nx.spacex.dto.LaunchDto;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -10,9 +10,9 @@ import java.util.Objects;
 import java.util.Optional;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class LaunchServiceImp implements LaunchService {
-    final String BASE_URL = "https://api.spacexdata.com/v4/launches/";
+    private static final String BASE_URL = "https://api.spacexdata.com/v4/launches/";
 
     private final RestTemplate restTemplate;
 

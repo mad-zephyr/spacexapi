@@ -4,7 +4,6 @@ import lombok.*;
 
 import java.time.Instant;
 import java.util.List;
-import java.util.UUID;
 
 @Data
 @Getter
@@ -14,12 +13,13 @@ import java.util.UUID;
 public class LaunchDto {
     private String id;
     private String name;
-    private String rocket;
     private Instant dateUtc;
     private boolean success;
     private boolean upcoming;
-
     private LinksDto links;
+
+    private String rocket;
+    private RocketDto rocketData;
 
 //
 //    private long staticFireDateUnix;

@@ -1,4 +1,4 @@
-package com.nx.spacex.configuration;
+package com.nx.spacex.security.config;
 
 import com.nx.spacex.security.filter.JwtAuthFilter;
 import lombok.AllArgsConstructor;

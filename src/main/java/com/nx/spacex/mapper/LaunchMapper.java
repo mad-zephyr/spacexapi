@@ -6,25 +6,17 @@ import com.nx.spacex.entity.LaunchEntity;
 import com.nx.spacex.entity.LinksEntity;
 import org.mapstruct.*;
 
-import java.time.Instant;
 import java.util.UUID;
 
 @Mapper(componentModel = "spring")
 public interface LaunchMapper {
-//
-//    private UUID id;
-//    private String originalId;
-//
-//    private String name;
-//    private Instant staticFireDateUtc;
-//    private Instant dateUtc;
 
-    LaunchDto entityToDto(LaunchEntity entity);
+    LaunchDto toDto(LaunchEntity entity);
 
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "originalId", source = "id")
     @Mapping(target = "links", source =".", qualifiedByName = "LinksEntity")
-    LaunchEntity dtoToEntity(LaunchDto dto);
+    LaunchEntity toEntity(LaunchDto dto);
 
     @AfterMapping
     default void populateWithUUID(@MappingTarget LaunchEntity entity) {
